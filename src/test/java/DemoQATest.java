@@ -13,6 +13,7 @@ public class DemoQATest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
     }
+
     @Test
     void fillingPageTest() {
 
@@ -47,16 +48,15 @@ public class DemoQATest {
 
         $("#submit").click();
 
-        $(".table-responsive").shouldHave(
-                text(firstName + " " + lastName),
-                text(email),
-                text("Male"),
-                text(number),
-                text("09 December,1992"),
-                text("Maths"),
-                text("Reading, Music"),
-                text("example.jpg"),
-                text(adress),
-                text("Haryana Karnal"));
+        $(".table-responsive").shouldHave(text(firstName + " " + lastName));
+        $(".table-responsive").shouldHave(text(email));
+        $(".table-responsive").shouldHave(text("Male"));
+        $(".table-responsive").shouldHave(text(number));
+        $(".table-responsive").shouldHave(text("09 December,1992"));
+        $(".table-responsive").shouldHave(text("Maths"));
+        $(".table-responsive").shouldHave(text("Reading, Music"));
+        $(".table-responsive").shouldHave(text("example.jpg"));
+        $(".table-responsive").shouldHave(text(adress));
+        $(".table-responsive").shouldHave(text("Haryana Karnal"));
     }
 }
